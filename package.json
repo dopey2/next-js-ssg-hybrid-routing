@@ -10,7 +10,7 @@
     "dev": "npm-run-all -p tailwind:dev next:dev",
     "build": "npm run tailwind:build & npm run next:build",
     "serve": "node script/afterbuild.js & npx serve ./out",
-    "lint": "next lint"
+    "lint": "eslint ./src"
   },
   "dependencies": {
     "@material-tailwind/react": "^2.1.4",
