@@ -3,12 +3,7 @@
 import React, { ReactNode } from "react";
 
 
-type HistoryApi = (href: string) => void;
-let historyApiExternalRef: HistoryApi = (href: string) => {
-    window.history.pushState({}, "", href);
-};
-
-let _externalUpdateListeners = () => {};
+let BrowserRouterInstance: BrowserRouter | null = null;
 
 interface Props {
   children ?: ReactNode
@@ -29,39 +24,40 @@ export default class BrowserRouter extends React.PureComponent<Props, State> {
 
     public static registerListener(id: string, callback: HistoryChangeCallback): void {
         BrowserRouter.listeners[id] = callback;
-        _externalUpdateListeners();
+        BrowserRouterInstance?.updateListeners();
     }
+
     public static removeListener(id: string): void {
         delete BrowserRouter.listeners[id];
     }
+
     public static pushHistory(href: string) {
-        historyApiExternalRef(href);
+        BrowserRouterInstance?.onHistory(href);
     }
+
+    // TODO improve this later, check for host/pathname/query etc
+    // TODO keep track of initial url to detect when the client leave the site (link to external url)
     private href: string = "";
-    
-    
+
     constructor(props: {}) {
         super(props);
         this.state = { isClient: false };
+
+        this.onHistory = this.onHistory.bind(this);
+        this.updateListeners = this.updateListeners.bind(this);
     }
-    
+
 
     componentDidMount() {
+        BrowserRouterInstance = this;
         this.setState({ isClient: true });
-        historyApiExternalRef = this.onHistory.bind(this);
-        _externalUpdateListeners = this.externalUpdateListeners.bind(this);
         this.href = new URL(window.location.href).pathname;
         this.updateListeners();
     }
 
     private onHistory(href: string) {
-        console.log("on history", href);
         window.history.pushState({}, "", href);
         this.href = href;
-        this.updateListeners();
-    }
-
-    private externalUpdateListeners() {
         this.updateListeners();
     }
 
