@@ -41,6 +41,15 @@
     "indent": ["error", 4],
     "no-multi-spaces": "error",
     "no-multiple-empty-lines": "error",
+    "lines-between-class-members": [
+      "error",
+      {
+        "enforce": [
+          { "blankLine": "always", "prev": "method", "next": "method" },
+          { "blankLine": "always", "prev": "field", "next": "method" }
+        ]
+      }
+    ],
     "no-redeclare": "error",
     "@typescript-eslint/no-unused-vars": ["error"],
     "object-curly-spacing": ["error", "always"],
