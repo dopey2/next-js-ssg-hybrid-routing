@@ -1,4 +1,6 @@
-const pretify = require('html-prettify');
+// TODO find a plugin to prettify HTML
+
+const pretify = (html) => html;
 const fs = require("fs");
 
 const htmlFilePath = process.argv[2];
