@@ -52,7 +52,7 @@ export default function Page(props: Props) {
             </main>
 
             <footer className={"flex pt-4 pb-4 flex-col bg-purple-900 justify-center items-center"}>
-                <Link href={"https://github.com/dopey2"} rel="author" className={"text-white"}>@Github</Link>
+                <Link keepDefaultBehaviour={true} href={"https://github.com/dopey2"} rel="author" className={"text-white"}>@Github</Link>
             </footer>
         </div>
     );
