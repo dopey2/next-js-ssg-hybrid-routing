@@ -15,7 +15,6 @@ const locales = {
 export const initI18nServer = async(locale: string) => {
     //@ts-ignore
     const translation = locales[locale];
-    console.log(translation);
 
     const config = {
         resources: {
