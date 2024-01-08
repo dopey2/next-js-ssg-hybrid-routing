@@ -105,3 +105,23 @@ Same for <strong>/en</strong>
 
 * The last scenario from **/fr/app/featA** to **/en/app/featA** could be improved via client side routing and lazy
   loading the resources to avoid a page reload. 
+
+
+## Q&A
+
+#### Why not use nextjs built in redirection instead of a custom server ?
+
+Next Js redirection doesn't work with static export.  
+See https://nextjs.org/docs/messages/export-no-custom-routes
+```js
+
+// output: "export" & redirects are not compatible toghether
+
+const nextConfig = {
+    output: "export",
+    async redirects() {
+        return [{source: '/post/:slug(\\d{1,})', destination: '/news/:slug'}],
+    }
+}
+```
+
