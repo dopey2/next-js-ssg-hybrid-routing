@@ -2,7 +2,23 @@ This repository serve as a proof of concept and as template for a next js static
 routing and client routing.
 We won't cover yet SSR in this topic only SSG, but the principle should be the same.
 
-### Glossary
+
+## Table of Contents
+- [Glossary](#glossary)
+- [Core Features](#core-features)
+- [How to Use](#how-to-use)
+  - [Start dev server](#start-dev-server)
+  - [Build](#build)
+  - [Test your output](#test-your-output)
+- [Other Helpful Information](#other-helpful-information)
+  - [Site map](#site-map)
+  - [Requesting server route VS client route explanations](#requesting-server-route-vs-client-route-explanations)
+- [Q&A](#qa)
+    - [Why not use nextjs built in redirection instead of a custom server ?](#why-not-use-nextjs-built-in-redirection-instead-of-a-custom-server-)
+
+
+
+## Glossary
 
 **SSG**: Static site generation. Like the old days <br/>
 **CSR**: Client side rendering. <br/>
@@ -71,7 +87,7 @@ The script writes a configuration file in **out/serve.json** which is used as th
 package **serve**. The custom configuration does the same thing as the custom server, it handle redirections.
 ___
 
-## Other helpfull informations
+## Other helpful information
 
 ### Site Map
 
@@ -109,7 +125,7 @@ Same for <strong>/en</strong>
 
 ## Q&A
 
-#### Why not use nextjs built in redirection instead of a custom server ?
+### Why not use nextjs built in redirection instead of a custom server ?
 
 Next Js redirection doesn't work with static export.  
 See https://nextjs.org/docs/messages/export-no-custom-routes
