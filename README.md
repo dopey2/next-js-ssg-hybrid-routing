@@ -104,20 +104,20 @@ Same for <strong>/en</strong>
 
 <strong>*</strong> = first visit;
 
-| from          | to            | does a GET request ? | requested  resources  |
-|---------------|---------------|----------------------|-----------------------|
-| *             | /fr           | YES                  | out/fr.html           |
-| *             | /fr/app       | YES                  | out/fr/app.html       |
-| *             | /fr/app/featA | YES                  | out/fr/app.html       |
-| *             | /fr/app/featB | YES                  | out/fr/app.html       |
-| /fr           | /fr/app       | YES                  | out/fr/app.html       |
-| /fr           | /fr/app/featA | YES                  | out/fr/app.html       |
-| /fr           | /fr/app/featB | YES                  | out/fr/app.html       |
-| /fr/app       | /fr/app/featA | NO                   | Client side generated |
-| /fr/app       | /fr/app/featB | NO                   | Client side generated |
-| /fr/app/featA | /fr/app/featB | NO                   | Client side generated |
-| /fr/app/featB | /fr/app/featA | NO                   | Client side generated |
-| /fr/app/featA | /en/app/featA | YES                  | out/fr/app.html       |
+| from          | to <br/> <span style="color:blue">CHANGES</span> | does a GET request ?                  | requested  resources  |
+|---------------|--------------------------------------------------|---------------------------------------|-----------------------|
+| *             | <span style="color:blue">/fr</span>              | <span style="color:orange">YES</span> | out/fr.html           |
+| *             | <span style="color:blue">/fr/app</span>          | <span style="color:orange">YES</span> | out/fr/app.html       |
+| *             | <span style="color:blue">/fr/app/featA</span>    | <span style="color:orange">YES</span> | out/fr/app.html       |
+| *             | <span style="color:blue">/fr/app/featB</span>    | <span style="color:orange">YES</span> | out/fr/app.html       |
+| /fr           | /fr<span style="color:blue">/app</span>          | <span style="color:orange">YES</span> | out/fr/app.html       |
+| /fr           | /fr<span style="color:blue">/app/featA</span>    | <span style="color:orange">YES</span> | out/fr/app.html       |
+| /fr           | /fr<span style="color:blue">/app/featB</span>    | <span style="color:orange">YES</span> | out/fr/app.html       |
+| /fr/app       | /fr/app<span style="color:blue">/featA</span>    | <span style="color:green">NO</span>   | Client side generated |
+| /fr/app       | /fr/app<span style="color:blue">/featB</span>    | <span style="color:green">NO</span>   | Client side generated |
+| /fr/app/featA | /fr/app<span style="color:blue">/featB</span>    | <span style="color:green">NO</span>   | Client side generated |
+| /fr/app/featB | /fr/app<span style="color:blue">/featA</span>    | <span style="color:green">NO</span>   | Client side generated |
+| /fr/app/featA | <span style="color:blue">/en</span>/app/featA    | <span style="color:orange">YES</span> | out/fr/app.html       |
 
 * The last scenario from **/fr/app/featA** to **/en/app/featA** could be improved via client side routing and lazy
   loading the resources to avoid a page reload. 
