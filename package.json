@@ -9,7 +9,7 @@
     "next:dev": "node server.js",
     "dev": "npm-run-all -p tailwind:dev next:dev",
     "build": "npm run tailwind:build & npm run next:build",
-    "serve": "node script/afterbuild.js & npx serve ./out",
+    "serve": "node script/defineRedirections.js & npx serve ./out",
     "lint": "eslint ./src"
   },
   "dependencies": {
