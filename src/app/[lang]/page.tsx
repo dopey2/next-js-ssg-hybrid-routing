@@ -1,4 +1,6 @@
 import { Metadata } from "next";
+import i18n from 'i18next';
+import { initI18n } from "@/i18n";
 
 
 interface Props {
@@ -15,13 +17,22 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     };
 }
 
+async function getData(locale: string) {
+    await initI18n(locale);
+}
+
+
 /**
  * Home page
  */
-export default function HomePage(props: Props) {
+export default async function HomePage(props: Props) {
+    await getData(props.params.lang);
+
     return (
         <div className={"w-full h-full flex flex-1 flex-col items-center justify-center"}>
-            <h1 className={"text-3xl"}>Home page {props.params.lang}</h1>
+            <h1 className={"text-3xl"}>Home page - {props.params.lang.toUpperCase()}</h1>
+            <h1 className={"text-3xl"}>{i18n.t("home.welcome")}</h1>
+
             <a href={`/${props.params.lang}/app/featA`}>MAIN APP URL</a>
         </div>
     );

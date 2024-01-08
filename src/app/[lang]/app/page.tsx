@@ -29,17 +29,17 @@ export default function Page(props: Props) {
                 <nav className="flex h-16 min-h-[4rem] flex-row bg-purple-900  items-center">
                     <div className={"w-36 pl-8"}>
                         <Link keepDefaultBehaviour={true} href={`/${props.params.lang}`} className={"text-2xl text-red-600"}>
-                  HOME
+                HOME
                         </Link>
                     </div>
 
                     <div className={"flex flex-1  justify-center "}>
                         <Link href={`/${props.params.lang}/app/featA`} className={"text-xl text-white ml-8"}>
-                  FeatA
+                FeatA
                         </Link>
 
                         <Link href={`/${props.params.lang}/app/featB`} className={"text-xl text-white ml-8"}>
-                  FeatB
+                FeatB
                         </Link>
 
                     </div>

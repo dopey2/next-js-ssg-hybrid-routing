@@ -1,0 +1,13 @@
+{
+    "home": {
+        "welcome": "Welcome"
+    },
+    "app": {
+        "featA": {
+            "text": "A dog"
+        },
+        "featB": {
+            "text": "Some cats"
+        }
+    }
+}
