@@ -95,8 +95,8 @@ ___
 |---------------|---------------------------|--------------------------------|
 | /fr           | Static                    | ./src/app/[lang]/page.tsx      |
 | /fr/app       | Static                    | ./src/app/[lang]/app/page.tsx  |
-| /fr/app/featA | Dynamic, client side only | ./src/app/feat/featA/index.tsx |
-| /fr/app/featB | Dynamic, client side only | ./src/app/feat/featB/index.tsx |
+| /fr/app/featA | Dynamic, client side only | ./src/feat/featA/index.tsx |
+| /fr/app/featB | Dynamic, client side only | ./src/feat/featB/index.tsx |
 
 Same for <strong>/en</strong>
 
