@@ -4,7 +4,7 @@ We won't cover yet SSR in this topic only SSG, but the principle should be the s
 ### Glossary
 **SSG**: Static site generation. Like the old days <br/>
 **CSR**: Client side rendering. <br/>
-**SPA**: Single page application. Usually an SPA is also does also **CSR** <br/>
+**SPA**: Single page application. Usually an SPA does client side rendering **(CSR)** <br/>
 **SSR**: Server side rendering. Not covered in this template (not yet)
 
 ## Core Features
