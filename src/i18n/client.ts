@@ -1,14 +1,16 @@
 import i18n from "i18next";
-import i18n_fr from "./resources/fr/i18n_fr.json";
-import i18n_en from "./resources/en/i18n_en.json";
 
 
+/**
+ * Use this initialization function in your SPA
+ * @param locale
+ */
 export const initI18nClient = async(locale: string) => {
-
+    const translationModule = await import(`./resources/${locale}/i18n_${locale}.ts`);
+    const translation = translationModule.default;
     const config = {
         resources: {
-            fr: { translation: i18n_fr },
-            en: { translation: i18n_en },
+            [locale]: { translation },
         },
         lng: locale,
         fallbackLng: locale,

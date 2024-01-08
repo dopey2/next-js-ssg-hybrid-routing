@@ -13,13 +13,18 @@ interface Props {
  * Main app
  */
 export default function MainApp(props: Props) {
-    const [isClient, setRender] = useState(false);
+    const [isServer, setRender] = useState(true);
+    const [isI18nLoading, setI18nLoading] = useState(true);
+
     useEffect(() => {
-        setRender(true);
-        initI18nClient(props.params.lang);
+        setRender(false);
+        initI18nClient(props.params.lang).then(() => {
+            setI18nLoading(false);
+        });
     }, []);
 
-    if(!isClient) {
+
+    if(isServer || isI18nLoading) {
         return <div className={"flex flex-1 items-center justify-center"}>loading</div>;
     }
 

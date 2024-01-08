@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import i18n from 'i18next';
-import { initI18n } from "@/i18n";
+import { initI18nServer } from "@/i18n/server";
 
 
 interface Props {
@@ -18,7 +18,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 }
 
 async function getData(locale: string) {
-    await initI18n(locale);
+    await initI18nServer(locale);
 }
 
 
