@@ -35,4 +35,4 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-./src/styles/tailwind.output.css
+/src/styles/tailwind.output.css
