@@ -105,20 +105,20 @@ Same for <strong>/en</strong>
 <strong>*</strong> = first visit;
 
 
-| from          | to <br/> <span style="color:blue">CHANGES</span> | does a GET request ?                  | requested  resources  |
-|---------------|--------------------------------------------------|---------------------------------------|-----------------------|
-| *             | <span style="color:blue">/fr</span>              | <span style="color:orange">YES</span> | out/fr.html           |
-| *             | <span style="color:blue">/fr/app</span>          | <span style="color:orange">YES</span> | out/fr/app.html       |
-| *             | <span style="color:blue">/fr/app/featA</span>    | <span style="color:orange">YES</span> | out/fr/app.html       |
-| *             | <span style="color:blue">/fr/app/featB</span>    | <span style="color:orange">YES</span> | out/fr/app.html       |
-| /fr           | /fr<span style="color:blue">/app</span>          | <span style="color:orange">YES</span> | out/fr/app.html       |
-| /fr           | /fr<span style="color:blue">/app/featA</span>    | <span style="color:orange">YES</span> | out/fr/app.html       |
-| /fr           | /fr<span style="color:blue">/app/featB</span>    | <span style="color:orange">YES</span> | out/fr/app.html       |
-| /fr/app       | /fr/app<span style="color:blue">/featA</span>    | <span style="color:green">NO</span>   | Client side generated |
-| /fr/app       | /fr/app<span style="color:blue">/featB</span>    | <span style="color:green">NO</span>   | Client side generated |
-| /fr/app/featA | /fr/app<span style="color:blue">/featB</span>    | <span style="color:green">NO</span>   | Client side generated |
-| /fr/app/featB | /fr/app<span style="color:blue">/featA</span>    | <span style="color:green">NO</span>   | Client side generated |
-| /fr/app/featA | <span style="color:blue">/en</span>/app/featA    | <span style="color:orange">YES</span> | out/fr/app.html       |
+| from                   | to <br/> <span style="color:blue">CHANGES</span>           | does a GET request ?         | requested  resources  |
+|------------------------|------------------------------------------------------------|------------------------------|-----------------------|
+| $\text{*}$             | $\color{blue}{\text{/fr}}$                                 | $\color{orange}{\text{YES}}$ | out/fr.html           |
+| $\text{*}$             | $\color{blue}{\text{/fr/app}}$                             | $\color{orange}{\text{YES}}$ | out/fr/app.html       |
+| $\text{*}$             | $\color{blue}{\text{/fr/app/featA}}$                       | $\color{orange}{\text{YES}}$ | out/fr/app.html       |
+| $\text{*}$             | $\color{blue}{\text{/fr/app/featB}}$                       | $\color{orange}{\text{YES}}$ | out/fr/app.html       |
+| $\text{/fr}$           | $\text{fr}\color{blue}{\text{/app}}$                       | $\color{orange}{\text{YES}}$ | out/fr/app.html       |
+| $\text{/fr}$           | $\text{fr}\color{blue}{\text{/app/featA}}$                 | $\color{orange}{\text{YES}}$ | out/fr/app.html       |
+| $\text{/fr}$           | $\text{fr}\color{blue}{\text{/app/featB}}$                 | $\color{orange}{\text{YES}}$ | out/fr/app.html       |
+| $\text{/fr/app}$       | $\text{fr/app}\color{blue}{\text{/featA}}$                 | $\color{green}{\text{NO}}$   | Client side generated |
+| $\text{/fr/app}$       | $\text{fr/app}\color{blue}{\text{/featB}}$                 | $\color{green}{\text{NO}}$   | Client side generated |
+| $\text{/fr/app/featA}$ | $\text{fr/app}\color{blue}{\text{/featB}}$                 | $\color{green}{\text{NO}}$   | Client side generated |
+| $\text{/fr/app/featB}$ | $\text{fr/app}\color{blue}{\text{/featA}}$                 | $\color{green}{\text{NO}}$   | Client side generated |
+| $\text{/fr/app/featA}$ | $\color{blue}{\text{/en}}\color{black}{\text{/app/featA}}$ | $\color{orange}{\text{YES}}$ | out/fr/app.html       |
 
 * The last scenario from **/fr/app/featA** to **/en/app/featA** could be improved via client side routing and lazy
   loading the resources to avoid a page reload. 
