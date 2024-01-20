@@ -31,7 +31,9 @@ This repository serves as a proof of concept and a template for a Next.js web ap
     - Client-Side routing implemented as React Components build on top of `window.history` & inspired from
       `react-router-dom`
 - 🖥️ Custom Dev server (server.js) to handle redirection for client routes only
-- 🌍 i18n Configuration & locale based routes eg: **/fr/app**, **/en/app**
+- 🌍 i18n Configuration & locale based routes eg: 
+  - 🇫🇷 **/fr/app**
+  - 🇬🇧 **/en/app**
 - 🎨 Tailwind CSS + Material Tailwind React
 - ⚙️ Custom ESLint  rules configuration
 - 📄 TypeScript sources
