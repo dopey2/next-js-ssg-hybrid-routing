@@ -104,20 +104,20 @@ ___
 <strong>*</strong> = first visit
 
 
-| from                   | to                                                         | does a GET request ?         | requested  resources  |
-|------------------------|------------------------------------------------------------|------------------------------|-----------------------|
-| $\text{*}$             | $\color{blue}{\text{/fr}}$                                 | $\color{orange}{\text{YES}}$ | out/fr.html           |
-| $\text{*}$             | $\color{blue}{\text{/fr/app}}$                             | $\color{orange}{\text{YES}}$ | out/fr/app.html       |
-| $\text{*}$             | $\color{blue}{\text{/fr/app/featA}}$                       | $\color{orange}{\text{YES}}$ | out/fr/app.html       |
-| $\text{*}$             | $\color{blue}{\text{/fr/app/featB}}$                       | $\color{orange}{\text{YES}}$ | out/fr/app.html       |
-| $\text{/fr}$           | $\text{fr}\color{blue}{\text{/app}}$                       | $\color{orange}{\text{YES}}$ | out/fr/app.html       |
-| $\text{/fr}$           | $\text{fr}\color{blue}{\text{/app/featA}}$                 | $\color{orange}{\text{YES}}$ | out/fr/app.html       |
-| $\text{/fr}$           | $\text{fr}\color{blue}{\text{/app/featB}}$                 | $\color{orange}{\text{YES}}$ | out/fr/app.html       |
-| $\text{/fr/app}$       | $\text{fr/app}\color{blue}{\text{/featA}}$                 | $\color{green}{\text{NO}}$   | Client side generated |
-| $\text{/fr/app}$       | $\text{fr/app}\color{blue}{\text{/featB}}$                 | $\color{green}{\text{NO}}$   | Client side generated |
-| $\text{/fr/app/featA}$ | $\text{fr/app}\color{blue}{\text{/featB}}$                 | $\color{green}{\text{NO}}$   | Client side generated |
-| $\text{/fr/app/featB}$ | $\text{fr/app}\color{blue}{\text{/featA}}$                 | $\color{green}{\text{NO}}$   | Client side generated |
-| $\text{/fr/app/featA}$ | $\color{blue}{\text{/en}}\color{black}{\text{/app/featA}}$ | $\color{orange}{\text{YES}}$ | out/en/app.html       |
+| from                   | to                                                         | redirect to      | does a GET request ?         | requested  resources  |
+|------------------------|------------------------------------------------------------|------------------|------------------------------|-----------------------|
+| $\text{*}$             | $\color{blue}{\text{/fr}}$                                 |                  | $\color{orange}{\text{YES}}$ | out/fr.html           |
+| $\text{*}$             | $\color{blue}{\text{/fr/app}}$                             |                  | $\color{orange}{\text{YES}}$ | out/fr/app.html       |
+| $\text{*}$             | $\color{blue}{\text{/fr/app/featA}}$                       | $\text{/fr/app}$ | $\color{orange}{\text{YES}}$ | out/fr/app.html       |
+| $\text{*}$             | $\color{blue}{\text{/fr/app/featB}}$                       | $\text{/fr/app}$ | $\color{orange}{\text{YES}}$ | out/fr/app.html       |
+| $\text{/fr}$           | $\text{fr}\color{blue}{\text{/app}}$                       |                  | $\color{orange}{\text{YES}}$ | out/fr/app.html       |
+| $\text{/fr}$           | $\text{fr}\color{blue}{\text{/app/featA}}$                 | $\text{/fr/app}$ | $\color{orange}{\text{YES}}$ | out/fr/app.html       |
+| $\text{/fr}$           | $\text{fr}\color{blue}{\text{/app/featB}}$                 | $\text{/fr/app}$ | $\color{orange}{\text{YES}}$ | out/fr/app.html       |
+| $\text{/fr/app}$       | $\text{fr/app}\color{blue}{\text{/featA}}$                 |                  | $\color{green}{\text{NO}}$   | Client side generated |
+| $\text{/fr/app}$       | $\text{fr/app}\color{blue}{\text{/featB}}$                 |                  | $\color{green}{\text{NO}}$   | Client side generated |
+| $\text{/fr/app/featA}$ | $\text{fr/app}\color{blue}{\text{/featB}}$                 |                  | $\color{green}{\text{NO}}$   | Client side generated |
+| $\text{/fr/app/featB}$ | $\text{fr/app}\color{blue}{\text{/featA}}$                 |                  | $\color{green}{\text{NO}}$   | Client side generated |
+| $\text{/fr/app/featA}$ | $\color{blue}{\text{/en}}\color{black}{\text{/app/featA}}$ | $\text{/en/app}$ | $\color{orange}{\text{YES}}$ | out/en/app.html       |
 
 * The last scenario from **/fr/app/featA** to **/en/app/featA** could be improved via client side routing and lazy
   loading the resources to avoid a page reload. 
