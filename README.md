@@ -35,7 +35,7 @@ We won't cover yet SSR in this topic only SSG, but the principle should be the s
 - Custom DEV server (server.js) to handle redirection for client routes only
 - Locale based routes eg: **/fr/app**, **/en/app**
 - i18n configuration
-- Tailwind CSS with hot reload during dev mode
+- Tailwind CSS + Material Tailwind React, with hot reload during dev mode
 - Custom eslint rules configuration
 - Typescript sources
 
@@ -104,6 +104,7 @@ Same for <strong>/en</strong>
 
 <strong>*</strong> = first visit;
 
+
 | from          | to <br/> <span style="color:blue">CHANGES</span> | does a GET request ?                  | requested  resources  |
 |---------------|--------------------------------------------------|---------------------------------------|-----------------------|
 | *             | <span style="color:blue">/fr</span>              | <span style="color:orange">YES</span> | out/fr.html           |
@@ -140,4 +141,3 @@ const nextConfig = {
     }
 }
 ```
-
