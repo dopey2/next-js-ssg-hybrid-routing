@@ -1,43 +1,41 @@
-This repository serve as a proof of concept and as template for a next js statical generated web app with both server
-routing and client routing.
-We won't cover yet SSR in this topic only SSG, but the principle should be the same.
+This repository serves as a proof of concept and a template for a Next.js web app featuring both server-side and client-side routing. While this topic focuses on static site generation (SSG) and not server-side rendering (SSR), the principles remain the same.
 
 
 ## Table of Contents
 - [Glossary](#glossary)
 - [Core Features](#core-features)
 - [How to Use](#how-to-use)
-  - [Start dev server](#start-dev-server)
+  - [Start Dev Server](#start-dev-server)
   - [Build](#build)
-  - [Test your output](#test-your-output)
+  - [Test Your Output](#test-your-output)
 - [Other Helpful Information](#other-helpful-information)
   - [Site map](#site-map)
-  - [Requesting server route VS client route explanations](#requesting-server-route-vs-client-route-explanations)
+  - [Requesting Server Route VS Client Route Explanations](#requesting-server-route-vs-client-route-explanations)
 - [Q&A](#qa)
-    - [Why not use nextjs built in redirection instead of a custom server ?](#why-not-use-nextjs-built-in-redirection-instead-of-a-custom-server-)
+    - [Why Not Use Next.js Built-in Redirection Instead of a Custom Server?](#why-not-use-nextjs-built-in-redirection-instead-of-a-custom-server-)
 
 
 
 ## Glossary
 
-**SSG**: Static site generation. Like the old days <br/>
-**CSR**: Client side rendering. <br/>
-**SPA**: Single page application. Usually an SPA does client side rendering **(CSR)** <br/>
-**SSR**: Server side rendering. Not covered in this template (not yet)
+**SSG**: Static Site Generation </br>
+**CSR**: Client-Side Rendering </br>
+**SPA**: Single Page Application (typically involves CSR) </br>
+**SSR**: Server-Side Rendering (not covered in this template) </br>
 
 ## Core Features
 
-- Hybrid Rendering SSG & CSR
+- Hybrid Rendering (SSG & CSR)
 - Hybrid Routing:
-    - Server side routing
-    - Client side routing implemented as React Components build on top of window.history & inspired from
-      react-router-dom
-- Custom DEV server (server.js) to handle redirection for client routes only
+    - Server-Side Routing
+    - Client-Side routing implemented as React Components build on top of `window.history` & inspired from
+      `react-router-dom`
+- Custom Dev server (server.js) to handle redirection for client routes only
 - Locale based routes eg: **/fr/app**, **/en/app**
-- i18n configuration
+- i18n Configuration
 - Tailwind CSS + Material Tailwind React, with hot reload during dev mode
-- Custom eslint rules configuration
-- Typescript sources
+- Custom ESLint  rules configuration
+- TypeScript sources
 
 ## How to ?
 
@@ -53,10 +51,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 npm run dev, launches 2 commands in parallel:
 
-1) **tailwind:dev** --> watch for changes in your src and rebuild the tailwind.output.css with only used classes from
-   tailwind
+1) **tailwind:dev** --> Watches for changes in your source files and rebuilds the `tailwind.output.css` with only used classes from Tailwind.
 2) **next:dev** -->  launch a custom nextjs server (server.js). This is required for the client routes redirection. If
-   the user visit **/fr/app/featA** first the server redirect this url to **/fr/app** and let the client handle the
+   the user visits **/fr/app/featA** first the server redirect this url to **/fr/app** and let the client handle the
    redirection.
 
 ___
@@ -98,7 +95,7 @@ ___
 | /fr/app/featA | Dynamic, client side only | ./src/feat/featA/index.tsx |
 | /fr/app/featB | Dynamic, client side only | ./src/feat/featB/index.tsx |
 
-Same for <strong>/en</strong>
+The same structure applies to <strong>/en</strong>
 
 ### Requesting server route vs client route explanations
 
