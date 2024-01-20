@@ -87,7 +87,7 @@ yarn serve
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 > [!NOTE]
-> This command use the **serve** package to serve static file. </br> 
+> This command use the [**serve**](https://www.npmjs.com/package/serve) package to serve static file. </br> 
 > Before starting the static server it calls **./script/defineRedirections.js**.
 The script writes a configuration file in **out/serve.json** which is used as the default configuration for the
 package **serve**. The purpose of the custom configuration is the handle redirection just as the custom dev server.
