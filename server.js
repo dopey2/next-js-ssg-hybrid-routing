@@ -20,7 +20,9 @@ app.prepare().then(() => {
             const app_fr_regex = new RegExp("/fr/app/*");
             const app_en_regex = new RegExp("/en/app/*");
 
-            if(app_fr_regex.test(pathname)) {
+            if(pathname === "/") {
+                await app.render(req, res, '/fr', query);
+            } else if(app_fr_regex.test(pathname)) {
                 await app.render(req, res, '/fr/app', query);
             } else if(app_en_regex.test(pathname)) {
                 await app.render(req, res, '/en/app', query)
