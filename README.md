@@ -87,9 +87,10 @@ yarn serve
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 > [!NOTE]
-> npm run serve also does few custom task. Before starting the static server it calls **./script/defineRedirections.js**.
-The script writes a configuration file in **out/serve.json** which is used as the default configuration file for the
-package **serve**. The custom configuration does the same thing as the custom server, it handle redirections.
+> This command use the **serve** package to serve static file. </br> 
+> Before starting the static server it calls **./script/defineRedirections.js**.
+The script writes a configuration file in **out/serve.json** which is used as the default configuration for the
+package **serve**. The purpose of the custom configuration is the handle redirection just as the custom dev server.
 
 ___
 
