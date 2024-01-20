@@ -37,7 +37,7 @@ This repository serves as a proof of concept and a template for a Next.js web ap
 - Custom ESLint  rules configuration
 - TypeScript sources
 
-## How to ?
+## How to use?
 
 ### Start dev server
 
@@ -91,18 +91,20 @@ ___
 | paths         | route type                | code mapping                   |
 |---------------|---------------------------|--------------------------------|
 | /fr           | Static                    | ./src/app/[lang]/page.tsx      |
+| /en           | Static                    | ./src/app/[lang]/page.tsx      |
 | /fr/app       | Static                    | ./src/app/[lang]/app/page.tsx  |
+| /en/app       | Static                    | ./src/app/[lang]/app/page.tsx  |
 | /fr/app/featA | Dynamic, client side only | ./src/feat/featA/index.tsx |
 | /fr/app/featB | Dynamic, client side only | ./src/feat/featB/index.tsx |
-
-The same structure applies to <strong>/en</strong>
+| /en/app/featA | Dynamic, client side only | ./src/feat/featA/index.tsx |
+| /en/app/featB | Dynamic, client side only | ./src/feat/featB/index.tsx |
 
 ### Requesting server route vs client route explanations
 
-<strong>*</strong> = first visit;
+<strong>*</strong> = first visit
 
 
-| from                   | to <br/> <span style="color:blue">CHANGES</span>           | does a GET request ?         | requested  resources  |
+| from                   | to                                                         | does a GET request ?         | requested  resources  |
 |------------------------|------------------------------------------------------------|------------------------------|-----------------------|
 | $\text{*}$             | $\color{blue}{\text{/fr}}$                                 | $\color{orange}{\text{YES}}$ | out/fr.html           |
 | $\text{*}$             | $\color{blue}{\text{/fr/app}}$                             | $\color{orange}{\text{YES}}$ | out/fr/app.html       |
@@ -115,7 +117,7 @@ The same structure applies to <strong>/en</strong>
 | $\text{/fr/app}$       | $\text{fr/app}\color{blue}{\text{/featB}}$                 | $\color{green}{\text{NO}}$   | Client side generated |
 | $\text{/fr/app/featA}$ | $\text{fr/app}\color{blue}{\text{/featB}}$                 | $\color{green}{\text{NO}}$   | Client side generated |
 | $\text{/fr/app/featB}$ | $\text{fr/app}\color{blue}{\text{/featA}}$                 | $\color{green}{\text{NO}}$   | Client side generated |
-| $\text{/fr/app/featA}$ | $\color{blue}{\text{/en}}\color{black}{\text{/app/featA}}$ | $\color{orange}{\text{YES}}$ | out/fr/app.html       |
+| $\text{/fr/app/featA}$ | $\color{blue}{\text{/en}}\color{black}{\text{/app/featA}}$ | $\color{orange}{\text{YES}}$ | out/en/app.html       |
 
 * The last scenario from **/fr/app/featA** to **/en/app/featA** could be improved via client side routing and lazy
   loading the resources to avoid a page reload. 
