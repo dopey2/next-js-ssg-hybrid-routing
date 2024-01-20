@@ -25,17 +25,16 @@ This repository serves as a proof of concept and a template for a Next.js web ap
 
 ## Core Features
 
-- Hybrid Rendering (SSG & CSR)
-- Hybrid Routing:
+- 🖼️ Hybrid Rendering (SSG & CSR)
+- 🔀 Flexible Routing:
     - Server-Side Routing
     - Client-Side routing implemented as React Components build on top of `window.history` & inspired from
       `react-router-dom`
-- Custom Dev server (server.js) to handle redirection for client routes only
-- Locale based routes eg: **/fr/app**, **/en/app**
-- i18n Configuration
-- Tailwind CSS + Material Tailwind React, with hot reload during dev mode
-- Custom ESLint  rules configuration
-- TypeScript sources
+- 🖥️ Custom Dev server (server.js) to handle redirection for client routes only
+- 🌍 i18n Configuration & locale based routes eg: **/fr/app**, **/en/app**
+- 🎨 Tailwind CSS + Material Tailwind React, with hot reload during dev mode
+- ⚙️ Custom ESLint  rules configuration
+- 📄 TypeScript sources
 
 ## How to use?
 
