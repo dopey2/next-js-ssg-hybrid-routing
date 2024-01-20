@@ -1,13 +1,14 @@
 import Image from "next/image";
 import i18n from "i18next";
+import { Typography } from "@material-tailwind/react";
 import img from './cats.jpg';
 
 
 const Index = () => {
     return (
         <div className={"flex flex-1 flex-col items-center justify-center"}>
-            <h1 className={"text-2xl"}>Feat B</h1>
-            <h2 className={"text-xl"}>{i18n.t("app.featB.text")}</h2>
+            <Typography variant={"h1"} className={"text-2xl"}>Feat B</Typography>
+            <Typography variant={"h2"} className={"text-xl"}>{i18n.t("app.featB.text")}</Typography>
             <div style={{ width: "500px", height: "300px" }}>
                 <Image
                     src={img}
