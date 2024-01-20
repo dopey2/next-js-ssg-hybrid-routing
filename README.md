@@ -1,5 +1,4 @@
-This repository serves as a proof of concept and a template for a Next.js web app featuring both server-side and client-side routing. While this topic focuses on static site generation (SSG) and not server-side rendering (SSR), the principles remain the same.
-
+> This repository serves as a proof of concept and a template for a Next.js web app featuring both server-side and client-side routing. While this topic focuses on static site generation (SSG) and not server-side rendering (SSR), the principles remain the same.
 
 ## Table of Contents
 - [Glossary](#glossary)
@@ -44,18 +43,21 @@ This repository serves as a proof of concept and a template for a Next.js web ap
 
 ```bash
 npm run dev
-# or
+```
+or
+```bash
 yarn dev
 ```
 
+
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-npm run dev, launches 2 commands in parallel:
-
-1) **tailwind:dev** --> Watches for changes in your source files and rebuilds the `tailwind.output.css` with only used classes from Tailwind.
-2) **next:dev** -->  launch a custom nextjs server (server.js). This is required for the client routes redirection. If
-   the user visits **/fr/app/featA** first the server redirect this url to **/fr/app** and let the client handle the
-   redirection.
+> [!NOTE]
+> npm run dev, launches 2 commands in parallel:
+> 1) **tailwind:dev** --> Watches for changes in your source files and rebuilds the `tailwind.output.css` with only used classes from Tailwind.
+> 2) **next:dev** -->  launch a custom nextjs server (server.js). This is required for the client routes redirection. If
+     the first visited path is **/fr/app/featA**, the server redirect it to **/fr/app** and let the client handle the rest.
 
 ___
 
@@ -63,20 +65,25 @@ ___
 
 ```bash
 npm run build
-# or
+```
+or
+```bash
 yarn build
 ```
+
 
 ___
 
 ### Test your output
 
 ```bash
-# only after npm run build
 npm run serve
-# or
+```
+or
+```bash
 yarn serve
 ```
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
