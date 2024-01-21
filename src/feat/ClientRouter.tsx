@@ -13,10 +13,10 @@ export default function ClientRouter(props: Props) {
     return (
         <ThemeProvider>
             <BrowserRouter>
-                <Route path={`/${props.params.lang}/app/featA`}>
+                <Route path={`^/${props.params.lang}/app/featA$`}>
                     <FeatA/>
                 </Route>
-                <Route path={`/${props.params.lang}/app/featB`}>
+                <Route path={`^/${props.params.lang}/app/featB$`}>
                     <FeatB/>
                 </Route>
             </BrowserRouter>

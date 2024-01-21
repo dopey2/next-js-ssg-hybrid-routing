@@ -31,9 +31,9 @@ export default class Route extends React.PureComponent<Props, State> {
     }
 
     onHistoryChange(href: string) {
-        const regex = new RegExp(href);
+        const regex = new RegExp(this.props.path);
         // TODO Improve the test to handle more complex scenarios
-        const isMatch = regex.test(this.props.path);
+        const isMatch = regex.test(href);
         this.setState({ isMatch });
     }
 
