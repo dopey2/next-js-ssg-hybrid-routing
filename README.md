@@ -7,6 +7,7 @@
   - [Start Dev Server](#start-dev-server)
   - [Build](#build)
   - [Test Your Output](#test-your-output)
+  - [Add a new locale to existing routes](#add-a-new-locale-to-existing-routes)
 - [Other Helpful Information](#other-helpful-information)
   - [Site map](#site-map)
   - [Requesting Server Route VS Client Route Explanations](#requesting-server-route-vs-client-route-explanations)
@@ -93,6 +94,29 @@ The script writes a configuration file in **out/serve.json** which is used as th
 package **serve**. The purpose of the custom configuration is the handle redirection just as the custom dev server.
 
 ___
+
+### Add a new locale to existing routes
+
+in `src/app/[lang]/layout.tsx` edit the function **generateStaticParams()** and add your locale in the returned array.
+
+example: 
+
+```typescript
+export async function generateStaticParams(): Promise<Array<Params>> {
+    return [
+        { lang: "en" },
+        { lang: "fr" },
+        { lang: "es" }, // <-- Append it here
+    ];
+}
+
+```
+
+> [!NOTE]
+> For the dev mode you need update the custom server to handle the redirection for the new route. <br/>
+> Same logic should be applied in `script/defineRedirection.js` if you want to serve the site locally and test the production build.
+
+
 
 ## Other helpful information
 
